@@ -3,12 +3,10 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Root route
 @app.route('/')
 def home():
     return "Welcome to the Flask ML Service! Go to /predict for predictions."
 
-# Prediction route
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
